@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>  
+    <title> PinturilloARSW</title>
+    <script src="javascript/sockjs-0.3.4.js"></script>
+    <script src="javascript/stomp.js"></script>
+    <script src="javascript/stomp-ws.js"></script>
+    <script src="javascript/jscolor.js"></script>
+    <script src="javascript/timer.js"></script>
+    
+    <link rel='stylesheet' type='text/css' href='css/jugar.css'>
+</head>
+<body>
+    <noscript>
+            <h2 id="noScript">Seems your browser doesn't support Javascript! Websocket relies on Javascript being enabled. Please enable
+                    Javascript and reload this page!</h2>
+    </noscript>    
+    <div id="jugar">        
+        <table>            
+            <tr>
+                <td>
+                    <div id="inicio">
+                        <img  id="imgBanner" align="center" src="imagenes/pinturillo.jpg">        
+                            <h1>Bienvenido a PinturilloARSW</h1>
+
+
+                        <div id="index" style="display:none;">                    
+                            Nombre: <input type="text" id="usuario" value="yo"/>
+
+                        </div>        
+                    </div>
+                    <div>                        
+                        <div id="temporizador">Tiempo</div>                    
+                        <label id="labelPalabraAleatoria"></label>
+                        <br>
+                        <canvas id="sheet" width="800" height="400"></canvas>
+                        <br>
+                        <button id="btnLimpiarCanvas">Limpiar</button>
+                        <button id="btnCambiarPalabra">Cambiar palabra</button>
+                        <button id="btnColor" class="jscolor {valueElement:'chosen-value', onFineChange:'setTextColor(this)'}">
+                            Seleccionar color
+                        </button>
+                        <button id="btnBorrar">Borrador</button>
+
+                    </div>
+                </td>        
+                <td>
+                    <div>
+                      <div>
+                        <button id="connect">Connect</button>
+                        <button id="disconnect" disabled="disabled">Disconnect</button>
+                      </div>
+                      <div id="conversationDiv">
+                        <label>Message to send?</label><input type="text" id="message" />
+                        <button id="send">Send</button>                    
+                        <div class="scroll">
+                            <p id="response"></p>
+                        </div>    
+                        <div id="usuarios">
+                        <label>Usuarios</label>
+                                        
+                        <div class="scroll">
+                            <p id="response1"></p>
+                        </div> 
+                      </div>
+                    </div>     
+                </td>
+            </tr>        
+        </table>
+    </div>
+</body>
+</html>
